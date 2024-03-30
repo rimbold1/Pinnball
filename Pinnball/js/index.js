@@ -4,7 +4,8 @@ const body = document.getElementById("body");
 
 const width = canvas.width; //300
 const height = canvas.height; // 300
-const score = 0;
+let score = 0;
+const scoreContainer = document.getElementById("score_container");
 
 
 class Circle {
@@ -68,10 +69,8 @@ body.addEventListener('keydown', function keyPress(event) {
     
     if (key === "ArrowRight" && bouncePlatform.x < 250) {
         bouncePlatform.x += 15;
-        console.log(bouncePlatform.x);
     }if (key === "ArrowLeft" && bouncePlatform.x > 10) {
         bouncePlatform.x -= 15;
-        console.log(bouncePlatform.x);
     }else {
         null;
     }
@@ -135,11 +134,13 @@ let intervalId = setInterval(() => {
                 redCircle.xSpeed = -redCircle.xSpeed;
                 element.x = null;
                 element.y = null;
+                score += 1;
                 break;    
             }else if (yRange > xRange) {
                 redCircle.ySpeed = -redCircle.ySpeed;
                 element.x = null;
                 element.y = null;
+                score += 1;
                 break;  
             }
         }
@@ -157,6 +158,6 @@ let intervalId = setInterval(() => {
     rightWall.drawRect();
     redCircle.draw();
     redCircle.move();
-    
+    scoreContainer.innerText = score;
 
 }, 16,6);
