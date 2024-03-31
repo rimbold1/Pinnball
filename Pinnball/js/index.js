@@ -158,6 +158,6 @@ let intervalId = setInterval(() => {
     rightWall.drawRect();
     redCircle.draw();
     redCircle.move();
-    scoreContainer.innerText = score;
+    scoreContainer.innerText = `score: ${score}`;
 
 }, 16,6);
