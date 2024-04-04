@@ -1,3 +1,5 @@
+
+
 const canvas = document.getElementById("canvas1");
 const ctx = canvas.getContext("2d");
 const body = document.getElementById("body");
@@ -161,3 +163,4 @@ let intervalId = setInterval(() => {
     scoreContainer.innerText = `score: ${score}`;
 
 }, 16,6);
+
